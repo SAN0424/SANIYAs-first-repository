@@ -1,0 +1,131 @@
+
+body {
+    background-color: #eef2f7;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.sidebar {
+    height: 100vh;
+    background: linear-gradient(180deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+}
+
+.sidebar h4 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sidebar .nav-link {
+    color: #dbe4ff;
+    padding: 14px 22px;
+    margin: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.15);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background-color: #ffffff;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+
+.navbar {
+    background: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+.stat-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+}
+
+.stat-card h5 {
+    opacity: 0.85;
+}
+
+.card-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    font-size: 3.2rem;
+    opacity: 0.25;
+}
+
+
+.bg-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+}
+
+.bg-success {
+    background: linear-gradient(135deg, #43cea2, #185a9d) !important;
+}
+
+.bg-warning {
+    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+}
+
+.bg-danger {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
+}
+
+
+.table thead {
+    background-color: #1e3c72;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f4ff;
+}
+
+
+.btn-custom {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+}
+
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.200);
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+    }
+}

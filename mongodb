@@ -1,0 +1,82 @@
+INPUT : 
+1) index.js 
+ 
+const express = require('express'); 
+const dbConnect = require('./mongodb') 
+const app=express(); 
+app.use(express.json()) 
+ 
+//GET API 
+app.get('/employee', async (req, res) => { 
+    let result = await dbConnect(); 
+    result = await result.find().toArray(); 
+    res.send(result); 
+}) 
+ 
+//POST API 
+app.post('/', async (req, res) => { 
+    let result = await dbConnect(); 
+    result = await result.insertOne(req.body); 
+    res.send("Data succesfully inserted"); 
+}) 
+ 
+//UPDATE API 
+app.put('/', async (req, res) => { 
+    let result = await dbConnect(); 
+    result = await result.updateOne({name: req.body.name}, {$set: {name:req.body.newval}}); 
+    res.send("Database succesfully inserted"); 
+}) 
+ 
+//DELETE API 
+app.delete('/', async (req, res) => { 
+    let result = await dbConnect(); 
+    result = await result.deleteOne(req.body); 
+    res.send("Data succesfully deleted"); 
+}) 
+ 
+const port = 3000; 
+app.listen(port, () => { 
+    console.log(`Example app listening on port http://localhost:${port}`) 
+}) 
+ 
+2) mongodb.js 
+ 
+const {MongoClient} = require('mongodb') 
+const url ="mongodb://127.0.0.1:27017" 
+ const database = 'employee'; 
+ const client = new MongoClient(url); 
+ 
+ const dbConnect = async() => { 
+    const result = await client.connect(); 
+    const db = await result.db(database); 
+return db.collection('employee_info'); 
+} 
+module.exports=dbConnect; 
+OUTPUT: 
+1) Create: 
+ 
+ 
+2) Read: 
+ 
+ 
+ 
+3)Update: 
+ 
+ 
+ 
+ 
+ 
+ 
+4) Delete: 
+5) Postman : Delete 
+6) Postman : Post 
+7) Postman : Get 
+ 
+ 
+ 
+8) Postman : Put 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,44 @@
+app.html 
+<h1>{{title}}</h1> 
+<div class="box"> 
+  <div> 
+    <input type="text" #name placeholder="Enter Your Name"><br> 
+     <input type="text" #phoneno placeholder="Enter Your Phone no"><br> 
+      <input type="text" #address placeholder="Enter Your Address"><br> 
+      <input type="text" #password placeholder="Enter Your Password"><br> 
+      <button (click)="getValue(name,phoneno,address,password)">Register</button> 
+ 
+     
+  </div> 
+</div> 
+<h1>YOUR REGISTERED DATA</h1> 
+<h2>YOUR NAME :{{displayname}}</h2> 
+<h2>YOUR PHONENO:{{displayphone}}</h2> 
+<h2>YOUR ADDRESS:{{displayaddress}}</h2> 
+<h2>YOUR PASSWORD:{{displaypassword}}</h2> 
+
+
+app.ts 
+import { Component, signal } from '@angular/core'; 
+import { RouterOutlet } from '@angular/router'; 
+@Component({ 
+selector: 'app-root', 
+imports: [RouterOutlet], 
+templateUrl: './app.html', 
+styleUrl: './app.css' 
+}) 
+export class App { 
+title='USER AUTHENTICATION APP' 
+displayname=''; 
+ displayphone=''; 
+ displayaddress=''; 
+ displaypassword=''; 
+ 
+ getValue(name:any,phoneno:any,address:any,password:any) 
+ { 
+  this.displayname=name.value; 
+  this.displayphone=phoneno.value; 
+  this.displayaddress=address.value; 
+  this.displaypassword=password.value; 
+ } 
+}

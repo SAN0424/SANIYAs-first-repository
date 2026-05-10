@@ -1,1 +1,119 @@
+GITHUB COMMANDS
+1]Open Your Project Folder(terminal)
+2] Set Your GitHub Username & Email
+git config --global user.name "YOUR_GITHUB_USERNAME"
+git config --global user.email "YOUR_GITHUB_EMAIL"
+3] Create .gitignore(Inside project folder)
+Inside the file type node_modules/
+ 4] Initialize Repository
+ git init
+5]Add Files
+git add .
+6] Commit Files
+git commit -m "Initial commit"
+7]Open GOOGLe-> GIT HUB-> New Repository -> COPY CODE into TERMINAL
+git remote add origin https://github.com/wee-hash/2.git
+git branch -M main
+git push -u origin main
 
+  
+AWS AMPLIFY STEPS
+
+1]Google Search (AWS AMPLIFY)-> Sign in to Console-> Search Amplify 
+2] Click on Create new App or Deploy new app
+3]Select GITHub Option
+4]Authorize  AWS through GIT
+5]Select Repository to Deploy->Next ->Next-> Deploy
+
+Google Cloud Environment  STEPS
+1] on terminal -> Open ANGULAR APP
+2] Install Firebase CLI
+    npm install -g firebase-tools
+3] Login FireBase
+firebase login
+4] Initialize Firebase
+firebase init(//hya nantar tithle kahi options select karayche)
+5] Build Angular Project
+ng build
+5] Deploy Firebase
+firebase deploy
+DOCKER STEPS
+1]sudo apt update
+2]sudo apt install docker.io 
+3] Check Docker Images(OPTIONAL)
+ sudo docker images
+4] Check Running Containers(OPTIONAL)
+sudo docker ps
+5] sudo docker pull eclipse-temurin:17-jdk
+6] sudo docker run -it eclipse-temurin:17-jdk jshell
+7]Write Addition of Two Numbers Program
+int a = 10;
+int b = 20;
+int sum = a + b;
+System.out.println(sum);
+8] EXIT JSHELL
+/exit
+9] Stop Container(OPTIONAL)
+sudo docker stop container_id
+10] Remove Container (OPTIONAL)
+sudo docker rm container_id
+
+
+ANGULAR
+1)install node.js
+2)Install Angular CLI
+  npm install -g @angular/cli
+3) Create a New Angular Application
+ng new my-app
+cd my-app
+5)RUN Application 
+ng serve
+
+You will find app. ts, app.html and app.css( src folder -> app folder)
+
+		EC2(AWS)
+
+Steps in AWS EC2
+1.	Open AWS → EC2 
+2.	Click Launch Instance 
+3.	Give the instance a name 
+4.	Select Ubuntu 
+5.	Generate/Create a Key Pair (.pem) file 
+6.	Keep the default settings (or select required options) 
+7.	Click Launch Instance 
+After launching:
+8.	Go to Instances 
+9.	Select the instance 
+10.	Click Connect 
+11.	Open the EC2 terminal/CLI
+12.	Commands on EC2 Terminal
+sudo apt update
+sudo apt install apache2 
+sudo systemctl start apache2
+sudo systemctl status apache2
+  Copy the Public IP of the EC2 instance 
+  Paste it into a browser
+
+                              //EC2 (Website Template)
+…Continue
+(Download Free website Template)
+Open Command prompt(Windows)
+Go to the folder where the ZIP file and .pem key are stored.
+cd Downloads
+dir
+scp -i key-name.pem template.zip ubuntu@public-ip:/home/ubuntu
+Connect Back to EC2 CLI 
+Install Unzip
+sudo apt install unzip 
+Check Uploaded File
+Ls
+Extract ZIP File
+unzip filename.zip
+Move Website Files to Apache Folder
+cd /var/www/html
+Copy template files:
+sudo cp -r /home/ubuntu/foldername/* /var/www/html
+Give Permissions
+sudo chmod -R 755 /var/www/html
+Restart Apache
+sudo systemctl restart apache2
